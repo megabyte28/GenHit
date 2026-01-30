@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Reporter</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Step 1: Image Upload -->
+        <div id="uploadSection" class="section active">
+            <h2>Step 1: Upload Image</h2>
+            <div class="upload-area" id="uploadArea">
+                <!-- Webcam controls -->
+                <div style="margin-top: 20px;">
+                    <button id="openCameraBtn" class="btn-secondary">Use Camera</button>
+                    <button id="captureBtn" class="btn-primary" style="display:none;">Capture Photo</button>
+                </div>
+
+                <video id="video" width="300" height="220" autoplay style="display:none; margin-top:15px;"></video>
+                <canvas id="canvas" width="300" height="220" style="display:none;"></canvas>
+
+
+                <p>Drag and drop your image here or click to select</p>
+                <input type="file" id="imageInput" accept="image/jpeg,image/png,image/jpg" style="display: none;">
+            </div>
+            <div id="uploadStatus"></div>
+            <img id="previewImage" style="max-width: 300px; max-height: 300px; margin-top: 20px; display: none;">
+            <button id="nextBtn" class="btn-primary" style="display: none; margin-top: 20px;">Next: Select Location</button>
+        </div>
+
+        <!-- Step 2: Location Selection -->
+        <div id="mapSection" class="section" style="display: none;">
+            <h2>Step 2: Select Location on Map</h2>
+            <p id="instructionText">Click on the map to select the issue location</p>
+            <div id="map"></div>
+            <button id="submitBtn" class="btn-primary" style="display: none; margin-top: 20px;">Submit Report</button>
+            <button id="backBtn" class="btn-secondary" style="margin-top: 20px;">Back to Upload</button>
+        </div>
+
+        <!-- Results -->
+        <div id="resultSection" class="section" style="display: none;">
+            <h2>Report Submitted!</h2>
+            <div id="resultContent"></div>
+            <button id="restartBtn" class="btn-primary" style="margin-top: 20px;">Start New Report</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
+
+
+
