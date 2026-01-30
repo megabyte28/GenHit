@@ -1,0 +1,217 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NEW CODE ADDED HERE */
+/* Header */
+.header {
+    width: 100%;
+    background: linear-gradient(135deg, #8a79e8, #f15656, #ff4747);
+    color: #ffffff;
+    padding: 22px 0;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.header p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 6px;
+}
+
+/* NEW CODE ENDS HERE */
+
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ef9d89, #e78044, #ce6c16);
+    margin: 0;
+    align-items: center;
+}
+
+.app-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+
+
+
+/* ===== CONTAINER (GLASS CARD) ===== */
+.container {
+    width: 95%;
+    max-width: 800px;
+    padding: 35px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(14px);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 0 30px rgba(147, 197, 253, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 80px;
+    margin-left: 250px;
+}
+
+/* ===== HEADINGS ===== */
+h2 {
+    font-size: 28px;
+    margin-bottom: 18px;
+    background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 8s infinite linear;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* ===== UPLOAD AREA ===== */
+.upload-area {
+    border: 2px dashed rgba(59, 130, 246, 0.6);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.08),
+            rgba(236, 72, 153, 0.08));
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.upload-area:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 30px rgba(59, 130, 246, 0.25),
+        0 0 25px rgba(236, 72, 153, 0.25);
+}
+
+.upload-area p {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* NEW CODE ADDED HERE */
+
+/* ===== VIDEO & IMAGE ===== */
+video,
+#previewImage {
+    margin-top: 16px;
+    border-radius: 18px;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12),
+        0 0 18px rgba(147, 197, 253, 0.4);
+}
+
+/* NEW CODE ENDS HERE */
+
+/* ===== MAP ===== */
+#map {
+    width: 100%;
+    height: 360px;
+    margin-top: 18px;
+    border-radius: 20px;
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12),
+        0 0 25px rgba(147, 197, 253, 0.45);
+}
+
+/* ===== BUTTON BASE ===== */
+button {
+    padding: 14px 26px;
+    border-radius: 999px;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ===== PRIMARY BUTTON ===== */
+.btn-primary {
+    color: #ffffff;
+    background: linear-gradient(135deg, #3b82f6, #a855f7, #ec4899);
+    background-size: 300%;
+    animation: gradientMove 6s infinite linear;
+    box-shadow:
+        0 10px 22px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow:
+        0 18px 40px rgba(59, 130, 246, 0.55),
+        0 0 20px rgba(236, 72, 153, 0.4);
+}
+
+/* ===== SECONDARY BUTTON ===== */
+.btn-secondary {
+    color: #1f2937;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* ===== BUTTON SPACING ===== */
+button+button {
+    margin-left: 12px;
+}
+
+/* ===== STATUS TEXT ===== */
+#uploadStatus p {
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+/* ===== RESULT SECTION ===== */
+#resultSection p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    #map {
+        height: 280px;
+    }
+}
